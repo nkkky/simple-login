@@ -5,7 +5,7 @@ import Link from 'next/link';
 import cookie from 'js-cookie';
 
 function Home() {
-  const {data, revalidate} = useSWR('/api/me', async function(args) {
+  const {data, mutate} = useSWR('/api/register/me', async function(args) {
     const res = await fetch(args);
     return res.json();
   });
@@ -29,7 +29,7 @@ function Home() {
           <button
             onClick={() => {
               cookie.remove('token');
-              revalidate();
+              mutate();
             }}>
             Logout
           </button>
@@ -37,9 +37,9 @@ function Home() {
       )}
       {!loggedIn && (
         <>
-          <Link href="/login">Login</Link>
+          <Link href="/register/login">Login</Link>
           <p>or</p>
-          <Link href="/signup">Sign Up</Link>
+          <Link href="/register/signup">Sign Up</Link>
         </>
       )}
     </div>

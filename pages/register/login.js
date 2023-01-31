@@ -10,7 +10,7 @@ const Login = () => {
   function handleSubmit(e) {
     e.preventDefault();
     //call api
-    fetch('/api/auth', {
+    fetch('/api/register/auth', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -30,7 +30,8 @@ const Login = () => {
         if (data && data.token) {
           //set cookie
           cookie.set('token', data.token, {expires: 2});
-          Router.push('/');
+          // Router.push('/');
+          Router.push('/register');
         }
       });
   }

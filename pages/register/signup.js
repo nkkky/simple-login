@@ -10,7 +10,7 @@ const Signup = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch('/api/users', {
+    fetch('/api/register/users', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -28,7 +28,7 @@ const Signup = () => {
         if (data && data.token) {
           //set cookie
           cookie.set('token', data.token, {expires: 2});
-          Router.push('/');
+          Router.push('/register');
         }
       });
   }
@@ -47,7 +47,7 @@ const Signup = () => {
 
       <br />
 
-      <label for="password">
+      <label htmlFor="password">
         password
         <input
           value={password}

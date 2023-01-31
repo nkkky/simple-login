@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const jwtSecret = 'SUPERSECRETE20220';
 
 const saltRounds = 10;
-const url = 'mongodb://localhost:27017';
+const url = 'mongodb://Metopia:2023METOPIAecuatopiaXmyBanka@192.168.191.227:31017/?retryWrites=true&w=majority&ssl=false';
 const dbName = 'simple-login-db';
 
 const client = new MongoClient(url, {

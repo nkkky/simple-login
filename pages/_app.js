@@ -1,4 +1,7 @@
-import '../styles.css';
-import App from 'next/app';
+export default function App({ Component, pageProps}) {
+  return (
 
-export default App;
+    <Component {...pageProps} />
+
+  )
+}
